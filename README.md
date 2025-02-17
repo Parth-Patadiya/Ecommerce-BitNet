@@ -1,7 +1,7 @@
 # Ecommerce-BitNet
 
 ## Install Dependances 
-# npm install
+### npm install
 
 ## Run Project
-# npm start
+### npm start
