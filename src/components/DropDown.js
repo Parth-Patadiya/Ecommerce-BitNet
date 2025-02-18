@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
-import { ChevronDownIcon } from "@heroicons/react/solid";
+import { ChevronDown } from "lucide-react";
 
-const Dropdown = ({ title, options, textColor }) => {
+const Dropdown = ({ title, options, textColor = "text-gray-500", d_padding }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 
@@ -16,33 +16,36 @@ const Dropdown = ({ title, options, textColor }) => {
   }, []);
 
   return (
-    <div className="relative" ref={dropdownRef}>
+    <div className="relative z-11" ref={dropdownRef}>
+      {/* Dropdown Button */}
       <button
-        onClick={() => setIsOpen(!isOpen)}
-        className={`flex items-center text-${textColor} text-sm pl-3 cursor-pointer`}
+        onClick={() => setIsOpen((prev) => !prev)}
+        className={`flex items-center justify-center ${textColor} text-sm py-2 rounded-lg transition duration-200 ${d_padding}`}
       >
         {title}
-        <ChevronDownIcon
-          className={`w-5 h-5 transition-transform ${isOpen ? "rotate-180" : "rotate-0"
-            }`}
+        <ChevronDown
+          className={`w-5 h-5 ml-2 transition-transform duration-200 ${isOpen ? "rotate-180" : "rotate-0"}`}
         />
       </button>
 
-      {isOpen && (
-        <div className="absolute mt-2 bg-white z-1">
-          <ul className="py-2 text-gray-800">
-            {options.map((option, index) => (
-              <li
-                key={index}
-                className="px-4 py-2 hover:bg-gray-200 cursor-pointer"
-                onClick={() => setIsOpen(false)}
-              >
-                {option}
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
+      {/* Dropdown Menu */}
+      <div
+        className={`absolute left-0 mt-2 w-48 bg-white shadow-md rounded-md transition-all duration-200 overflow-hidden ${
+          isOpen ? "opacity-100 visible scale-100" : "opacity-0 invisible scale-95"
+        }`}
+      >
+        <ul className="py-2 text-gray-800">
+          {options.map((option, index) => (
+            <li
+              key={index}
+              className="px-4 py-2 hover:bg-gray-100 cursor-pointer transition duration-150"
+              onClick={() => setIsOpen(false)}
+            >
+              {option}
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

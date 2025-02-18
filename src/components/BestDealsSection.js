@@ -27,15 +27,20 @@ const BestDealsSection = () => {
   };
 
   return (
-    <div className="px-[200px] mt-3">
-      <div className="flex items-center">
-        <h2 className="text-2xl font-bold pr-10">Best Deals</h2>
-        <p className="text-md text-black">Deals end in </p>
-        <span className="ml-1 px-4 py-1.5 bg-[#F3DE6D]">
-          {formatTime(timeLeft)}
-        </span>
+    <div className="px-4 md:px-10 lg:px-20 mt-3 mb-5">
+      {/* Header Section */}
+      <div className="flex flex-col md:flex-row items-center gap-2">
+        <h2 className="text-2xl font-bold">Best Deals</h2>
+        <div className="flex items-center">
+          <p className="text-md text-black">Deals end in</p>
+          <span className="ml-2 px-4 py-1.5 bg-[#F3DE6D] text-sm font-semibold rounded-sm">
+            {formatTime(timeLeft)}
+          </span>
+        </div>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-4">
+
+      {/* Products Grid */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-2 mt-4">
         {products.map((product, index) => (
           <ProductCard key={index} product={product} />
         ))}
