@@ -12,16 +12,16 @@ const SocialSection = () => {
       {/* Right Side: Social Icons & Dropdowns */}
       <div className="flex flex-wrap sm:flex-nowrap items-center mt-2 sm:mt-0">
         {/* Follow Us Section */}
-        <div className="flex items-center sm:border-r sm:pr-6 mb-2 sm:mb-0">
+        <div className="flex items-center sm:pr-6 mb-2 sm:mb-0">
           <span>Follow us:</span>
           <img className="ml-2 h-[13px]" src="/images/Social Icon.png" alt="Social Icons" />
         </div>
 
-        {/* Dropdowns */}
+        {/* Dropdowns
         <div className="flex items-center sm:ml-6 space-x-4">
           <Dropdown title="Eng" options={["Eng", "Spn", "Fre", "Ger"]} textColor="white" />
           <Dropdown title="USD" options={["USD", "EUR", "GBP", "JPY"]} textColor="white" />
-        </div>
+        </div> */}
       </div>
     </nav>
   );

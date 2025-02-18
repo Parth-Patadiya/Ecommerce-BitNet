@@ -56,7 +56,7 @@ const Navbar = () => {
 
             {/* Mobile Menu (Dropdown) */}
             {menuOpen && (
-                <div className="absolute top-14 left-0 w-full bg-white shadow-md flex flex-col p-4 space-y-4 text-gray-700 md:hidden transition-all duration-300">
+                <div className="z-1 absolute top-14 left-0 w-full bg-white shadow-md flex flex-col p-4 space-y-4 text-gray-700 md:hidden transition-all duration-300">
                     <Dropdown
                         title="All Category"
                         options={["Game", "SmartPhone", "Camera", "TV"]}
