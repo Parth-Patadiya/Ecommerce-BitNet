@@ -16,7 +16,7 @@ const Dropdown = ({ title, options, textColor = "text-gray-500", d_padding }) =>
   }, []);
 
   return (
-    <div className="relative z-11" ref={dropdownRef}>
+    <div className="relative" ref={dropdownRef}>
       {/* Dropdown Button */}
       <button
         onClick={() => setIsOpen((prev) => !prev)}
@@ -31,7 +31,7 @@ const Dropdown = ({ title, options, textColor = "text-gray-500", d_padding }) =>
       {/* Dropdown Menu */}
       <div
         className={`absolute left-0 mt-2 w-48 bg-white shadow-md rounded-md transition-all duration-200 overflow-hidden ${
-          isOpen ? "opacity-100 visible scale-100" : "opacity-0 invisible scale-95"
+          isOpen ? "opacity-100 visible scale-100 z-11" : "opacity-0 invisible scale-95"
         }`}
       >
         <ul className="py-2 text-gray-800">
