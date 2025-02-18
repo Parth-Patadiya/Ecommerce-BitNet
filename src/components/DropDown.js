@@ -30,7 +30,7 @@ const Dropdown = ({ title, options, textColor = "text-gray-500", d_padding }) =>
 
       {/* Dropdown Menu */}
       <div
-        className={`absolute left-0 mt-2 w-48 bg-white shadow-md rounded-md transition-all duration-200 overflow-hidden ${
+        className={`absolute left-0 mt-2 w-48 bg-white shadow-md rounded-md transition-all duration-200 ${
           isOpen ? "opacity-100 visible scale-100 z-11" : "opacity-0 invisible scale-95"
         }`}
       >
